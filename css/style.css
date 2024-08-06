@@ -308,7 +308,8 @@ span {
 }
 
 .about-img img {
-    width: 40vw;
+    width: 20vw;
+/*     40vw */
 }
 
 .heading {
@@ -874,7 +875,8 @@ span {
     }
 
     .about-img img {
-        width: 70vw;
+        width: 35vw;
+/*         70vw */
         margin-top: -2rem;
     }
 
@@ -943,7 +945,8 @@ span {
 
 @media (max-width: 365px) {
     .about-img img {
-        width: 90vw;
+        width: 45vw;
+/*         90vw */
     }
 }
 
