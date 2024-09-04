@@ -1038,3 +1038,21 @@ img {
     display: flex;
     color: var(--skills-text-color);
 }
+
+
+.subheading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--skills-text-color); /* Use variable for text color */
+    margin: 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--skills-border-color); /* Use variable for border color */
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
