@@ -2,6 +2,9 @@
   
 This is my personal portfolio website showcasing skills, projects, and professional experience. It includes sections such as:
 
+Live Preview
+You can view the live version of my portfolio [here](https://suhas-devfolio.vercel.app/).
+
 - **Home:** A brief introduction, including links to social profiles and a downloadable resume.
 - **About:** An overview of my background in Information Science Engineering and my interests in web development, machine learning, and more.
 - **Experience:** Details on past professional roles including Backend Developer at NFThings and involvement with the Creative Team at Mukti.
