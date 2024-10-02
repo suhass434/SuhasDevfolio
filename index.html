@@ -1,337 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suhas | Portfolio</title>
-    <!-- <link rel="icon" type="image/svg+xml" href=".images/logo-3.jpeg" /> -->
-
-    <!-- swiper css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-
-    <!-- box icons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-    <!-- custom css -->
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- emailjs -->
+    <title>Suhas S - AI and Web Development Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
 </head>
-
 <body>
-
-    <!-- header design -->
-    <header class="header">
-        <a href="#" class="logo">Portfolio.</a>
-
-        <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>  
-            <a href="#experience">Experience</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-
-        <div class="bx bx-moon" id="darkMode-icon"></div>
-
-        <div class="bx bx-menu" id="menu-icon"></div>
+    <header>
+        <div class="profile-image-container">
+            <img src="images/profile_photo/tv_style.png" alt="Suhas S" class="profile-image">
+        </div>        
+        <h1 class="typing-effect" id="name"></h1>
+        <p id="title"></p>
+        <a href="https://drive.google.com/file/d/1LYFK0pvWMe7o75i0YYijvK1_cx6hm_zw/view?usp=drive_link" target="_blank" class="resume-button"><p>View Resume</p></a>
+        <a href="#contact" class="contact-button">Contact Me</a>
     </header>
 
-    <!-- home section design -->
-    <section class="home" id="home">
-        <div class="home-content">
-            <h3>Hello, I am</h3>
-            <h1>SUHAS S</h1>
-            <!-- <p>
-                I'm an aspiring web developer and machine learning enthusiast, passionate about creating dynamic, responsive websites and exploring the vast potential of AI to enhance user experiences and solve real-world problems.
-            </p> -->
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#hobby">Hobby</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <!-- <li><a href="#certificates">Certificates</a></li> -->
+            <!-- <li><a href="#contact">Contact</a></li> -->
+        </ul>
+    </nav>
 
-            <div class="social-media">
-                <a href="https://www.linkedin.com/in/suhas-s-4aa89425a"><i class='bx bxl-linkedin'></i></a>
-                <a href="https://github.com/suhass434"><i class='bx bxl-github'></i></a>
-                <a href="https://www.instagram.com/suhass434/"><i class='bx bxl-instagram'></i></a>
-            </div>
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hello there! I'm Suhas S, an Information Science Engineering student at MSRIT with an insatiable curiosity for deep learning, web development, and Linux systems. As a Java developer, aspiring web developer, and machine learning enthusiast, I'm on a mission to create robust backend solutions, dynamic responsive websites, and harness the incredible potential of AI to enhance user experiences and tackle real-world challenges. My technical skills are complemented by my love for cycling and music production, which fuel my creativity and provide a unique perspective in problem-solving. Whether I'm crafting efficient Java code, building web applications, or exploring the latest AI breakthroughs, I'm always pushing the boundaries of what's possible in the digital realm.</p>
+        </section>
 
-            <a href="images/Suhas_S_Resume.pdf" class="btn" download="Suhas_S_Resume.pdf">Download CV</a>
-        </div>
+        <section id="experience">
+            <h2>Experience</h2>
+            <ul>
+                <li>
+                    <h3>Backend Developer Intern, NFThings (April 2024 – Present):</h3>
+                    <ul>
+                        <li><p>Spearheading backend development at NFThings, a London-based company specializing in decentralized websites using Web3 technology.</p></li>
+                        <li><p>Developing and maintaining Deflix, a blockchain-based movie rating application, ensuring scalability and efficiency, and having built 5+ APIs to enhance functionality.</p></li>
+                        <li></p>Enhancing backend development skills by managing complex systems and optimizing performance.</p></li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Creative Team, Mukti (Aug 2023 – Mar 2024):</h3>
+                    <ul>
+                        <li></p>Championed open-source software, with a primary focus on Linux distributions, educating over 300 individuals within the college community.</p></li>
+                        <li></p>Guided more than 30 individuals in setting up and configuring Linux operating systems on their personal computers.</p></li>
+                        <li></p>Collaborated with team members to organize and execute events highlighting the benefits and usage of open-source technologies. Successfully hosted 5+ events with an average attendance of 100 participants.</p></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        
 
-        <div class="profession-container">
-            <div class="profession-box">
-                <div class="profession" style="--i:0;">
-                    <i class='bx bx-code-alt'></i>
-                    <h3>Web Developer</h3>
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="Programming Languages">
+                    <h3>Programming Languages</h3>
+                    <span class="skill">C</span>
+                    <span class="skill">Python</span>
+                    <span class="skill">Java</span>
+                    <span class="skill">JavaScript</span>
+                    <span class="skill">Bash</span>                    
                 </div>
-                <div class="profession" style="--i:1;">
-                    <i class='bx bx-brain'></i>
-                    <h3>ML enthusiast</h3>
+                <div class="Machine Learning">
+                    <h3>Machine Learning</h3>
+                    <span class="skill">Neural Networks</span>
+                    <span class="skill">Pytorch</span>
+                    <span class="skill">Deep Learning</span>
+                    <span class="skill">Fastai</span>
+                    <span class="skill">Natural Language Processing</span>
+                    <span class="skill">Computer Vision</span>
+                    <span class="skill">TensorFlow</span>
+                    <span class="skill">Scikit-learn</span>
+                    <span class="skill">OpenCV</span>
+                    <span class="skill">Gradio</span>                     
                 </div>
-                <div class="profession" style="--i:2;">
-                    <i class='bx bx-desktop'></i>
-                    <h3>Linux User</h3>
+                <div class="Data Structures and Algorithms">
+                    <h3>Data Structures and Algorithms</h3>
+                    <span class="skill">DSA in Java</span>
                 </div>
-                <div class="profession" style="--i:3;">
-                    <i class='bx bx-music'></i>
-                    <h3>Music Producer</h3>
+                <div class="Web Development">
+                    <h3>Web Development</h3>
+                    <span class="skill">HTML/CSS</span>
+                    <span class="skill">React.js</span>
+                    <span class="skill">Node.js</span>                    
                 </div>
-
-                <div class="circle"></div>
-            </div>
-
-            <div class="overlay"></div>
-        </div>
-
-        <div class="home-img">
-            <img src="images/photo1.png" alt="">
-        </div>
-    </section>
-
-    <!-- about section design -->
-    <section class="about" id="about">
-        <div class="about-img">
-            <img src="images/photo2.png" alt="">
-        </div>
-
-        <div class="about-content">
-            <h2 class="heading">About <span>Me</span></h2>
-            <h3>
-                I am an Information Science Engineering student at MSRIT with a strong passion for deep learning, web development, and Linux systems. I'm an aspiring web developer and machine learning enthusiast, passionate about creating dynamic, responsive websites and exploring the vast potential of AI to enhance user experiences and solve real-world problems. In addition to my technical skills, I have a keen interest in cycling and music production, which helps me maintain a balanced and creative approach to problem-solving.
-            </h3>
-            <!-- <p>
-                This website is my personal blog where I write about web development
-                topics that interest me and inspire me.
-            </p>
-            <p>
-                Thank you for visiting my website and getting to know me better. I hope you
-                enjoyed reading my blog posts and
-                found
-                them useful and informative. If you want to read more of my posts, subscribe
-                to my newsletter where I send
-                weekly
-                updates on web development trends and tips. If you have any feedback or
-                suggestions, please let me know. I'd love to hear from you. -->
-            </p>
-            <!-- <a href="#" class="btn">Read More</a> -->
-        </div>
-    </section>
-
-    <!-- services section design -->
-    <section class="services" id="experience">
-        <h2 class="heading">Work<span> Experience</span></h2>
-
-        <div class="services-container">
-            <div class="services-box">
-                <!-- <i class='bx bx-code-alt'></i> -->
-                <h3>Backend Developer</h3>
-                <h2>NFThings</h2>
-                <p>              
-                    I develop and maintain Deflix, a scalable and efficient movie rating application, collaborating closely with cross-functional teams to deliver high-quality features. I also provide detailed code reviews and constructive feedback to foster continuous improvement and learning among fellow developers. 
-                </p>
-                <!-- <a href="#" class="btn">Read More</a> -->
-            </div>
-            <div class="services-box">
-                <!-- <i class='bx bx-bar-chart-alt'></i> -->
-                <h3>Creative Team</h3>
-                <h2>Mukti</h2>
-                <p>
-                    I promote open-source software, primarily Linux distributions, within the college community, assisting over 30 individuals with setup and configuration. Additionally, I create posters and marketing materials and organize events to highlight the numerous benefits of open-source technologies.                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- skills section design -->
-    <section class="skills" id="skills">
-        <h2 class="heading">My <span>Skills</span></h2>
-    
-        <div class="skills-container">
-            <div class="skills-box">
-                <h3 class="subheading">Programming Languages</h3>
-                <div class="skills-list">
-                    <div class="skill-item">C</div>
-                    <div class="skill-item">Python</div>
-                    <div class="skill-item">Java (Advanced)</div>
-                    <div class="skill-item">JavaScript</div>
-                    <div class="skill-item">Bash</div>
+                <div class="Databases">
+                    <h3>Databases</h3>
+                    <span class="skill">SQL</span>
+                    <span class="skill">MongoDB</span>
                 </div>
-    
-                <h3 class="subheading">Web Development</h3>
-                <div class="skills-list">
-                    <div class="skill-item">HTML</div>
-                    <div class="skill-item">CSS</div>
-                    <div class="skill-item">JavaScript</div>
-                    <div class="skill-item">React.js</div>
-                    <div class="skill-item">Node.js</div>
                 </div>
-    
-                <h3 class="subheading">Data Science & Machine Learning</h3>
-                <div class="skills-list">
-                    <div class="skill-item">Data Structures & Algorithms</div>
-                    <div class="skill-item">Natural Language Processing (NLP)</div>
-                    <div class="skill-item">TensorFlow</div>
-                    <div class="skill-item">Scikit-learn</div>
-                    <div class="skill-item">Huggingface</div>
-                    <div class="skill-item">Fastai</div>
-                    <div class="skill-item">OpenCV</div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="images/projects/makemore.png" alt="MakeMore Project" onclick="openModal(this.src)">
+                    <h3>MakeMore</h3>
+                    <p>Built a neural network from scratch for generating new names using character-level language models.</p>
+                    <p class="tech-used"><strong>Tech:</strong> Python, PyTorch</p>
+                    <a href="https://github.com/suhass434/MakeMore" target="_blank">GitHub</a>
+                </div>                
+                <div class="project-card">
+                    <img src="images/projects/diacure.png" alt="DiaCure Project" onclick="openModal(this.src)">
+                    <h3>DiaCure</h3>
+                    <p>Predicts diabetic retinopathy from retinal images with 95% accuracy using deep learning.</p>
+                    <p class="tech-used"><strong>Tech:</strong>Python, Scikit Learn, Gradio, Fastai, OpenCV</p>
+                    <a href="https://github.com/suhass434/DiaCure" target="_blank">GitHub</a>
                 </div>
-    
-                <h3 class="subheading">Tools & Frameworks</h3>
-                <div class="skills-list">
-                    <div class="skill-item">Streamlit</div>
-                    <div class="skill-item">Gradio</div>
+                <div class="project-card">
+                    <img src="images/projects/safespoon.png" alt="SafeSpoon Project" onclick="openModal(this.src)">
+                    <h3>SafeSpoon</h3>
+                    <p>Analyzes food ingredients from photos and provides personalized allergy alerts.</p>
+                    <p class="tech-used"><strong>Tech:</strong>OCR, GenAi, Gradio, React.js, Node.js, MongoDB</p>
+                    <a href="https://github.com/suhass434/SafeSpoon-api" target="_blank">GitHub</a>
                 </div>
-    
-                <h3 class="subheading">Databases</h3>
-                <div class="skills-list">
-                    <div class="skill-item">SQL</div>
-                    <div class="skill-item">MongoDB</div>
+                <div class="project-card">
+                    <img src="images/projects/breedsnap.png" alt="BreedSnap Project" onclick="openModal(this.src)">
+                    <h3>BreedSnap</h3>
+                    <p>Web app for identifying dog breeds from images using machine learning.</p>
+                    <p class="tech-used"><strong>Tech:</strong> HTML, CSS, JavaScript, Python, Scikit Learn, Gradio, Fastai, OpenCV</p>
+                    <a href="https://github.com/suhass434/BreedSnap" target="_blank">GitHub</a>
+                </div>
+                <div class="project-card">
+                    <img src="images/projects/neuroflap.png" alt="NeuroFlap Project" onclick="openModal(this.src)">
+                    <h3>NeuroFlap</h3>
+                    <p>Developed a Pygame where NEAT genetic algorithm autonomously plays Flappy Bird, achieving 100% success. Implemented evolutionary AI for optimal gameplay.</p>
+                    <p class="tech-used"><strong>Tech:</strong> Python, Neet</p>
+                    <a href="https://github.com/suhass434/NeuroFlap" target="_blank">GitHub</a>
+                </div>
+                <div class="project-card">
+                    <img src="images/projects/spamclassifier.png" alt="SpamGuard Project" onclick="openModal(this.src)">
+                    <h3>SpamGuard</h3>
+                    <p>Developed a robust spam detection tool using Naive Bayes algorithm to classify emails and SMS messages with 97% accuracy.</p>
+                    <p class="tech-used"><strong>Tech:</strong>Python, Scikit-learn, Streamlit</p>
+                    <a href="https://github.com/suhass434/SpamGuard" target="_blank">GitHub</a>
                 </div>
             </div>
-        </div>
-    </section>
-    
+        </section>
 
-    <!-- project section design -->
-    <section class="portfolio" id="projects">
-        <h2 class="heading">Latest <span>Project</span></h2>
-
-        <div class="portfolio-container">
-
-            <div class="portfolio-box">
-                <img src="images/project/diacure.png" alt="SafSpoon">
-
-                <div class="portfolio-layer">
-                    <h4>DiaCure</h4>
-                    <a href="https://huggingface.co/spaces/suhas1324/Diacure-stage-2/tree/main"><i class='bx bx-link-external'></i></a>
-                    <p>Developed a web platform that predicts diabetic retinopathy from retinal images with 95% accuracy using deep
-                        learning.</p>
-                </div>
-            </div>
-
-            <div class="portfolio-box">
-                <img src="images/project/safespoon.png" alt="SafeSpoon">
-
-                <div class="portfolio-layer">
-                    <h4>SafeSpoon</h4>
-                    <a href=" https://github.com/suhass434/SafeSpoon-api"><i class='bx bx-link-external'></i></a>
-                    <p>Built a web app that analyzes food ingredients from photos and gives personalized allergy alerts based on user data.</p>
-                </div>
-            </div>
-            <div class="portfolio-box">
-                <img src="images/project/breedsnap.png" alt="BreedSnap">
-                <div class="portfolio-layer">
-                    <h4>BreedSnap</h4>
-                    <a href="https://github.com/suhass434/BreedSnap/"><i class='bx bx-link-external'></i></a>
-                    <p>Developed a web app that analyzes food ingredients from uploaded photos and provides personalized allergy alerts based on user data.</p>
-                </div>
-                <div></div>
-            </div>
-            <div class="portfolio-box">
-                <img src="images/project/neuroflap.png" alt="NeuroFlap">
-                
-                <div class="portfolio-layer">
-                    <h4>NeuroFlap</h4>
-                    <a href="https://github.com/suhass434/flappybird-generative_ai/tree/main"><i class='bx bx-link-external'></i></a>
-                    <p>Developed a Pygame game where a NEAT genetic algorithm plays Flappy Bird with 100% success rate.</p>
-                </div>
-            </div>
-            <div class="portfolio-box">
-                <img src="images/project/spamclassifier.png" alt="SpamGuard">
-
-                <div class="portfolio-layer">
-                    <h4>SpamGuard</h4>
-                    <a href="https://github.com/suhass434/SafeSpoon-api"><i class='bx bx-link-external'></i></a>
-                    <p>SpamGuard is a spam detection tool that uses Multinomial Naive Bayes to classify emails and SMS, achieving 97% accuracy. </p>
-                </div>
-            </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- testimonial design -->
-    <!-- <div class="testimonial-container">
-        <h2 class="heading">Valuable <span>Testimonial</span></h2>
-
-        <div class="testimonial-wrapper">
-            <div class="testimonial-box mySwiper">
-                <div class="testimonial-content swiper-wrapper">
-                    <div class="testimonial-slide swiper-slide">
-                        <img src="images/testimonial1.jpg" alt="">
-                        <h3>Jackson Levi</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem dignissimos aliquid
-                            iure delectus corrupti impedit, beatae aperiam ad iusto nostrum possimus cum pariatur harum
-                            assumenda suscipit a, qui, tempora maxime nulla facere quo ipsum tempore. Atque libero
-                            provident ad aut officia pariatur voluptate quaerat delectus nesciunt, sequi eligendi
-                            aperiam fugit unde nihil, iste similique illum. Dignissimos enim officia consequuntur
-                            dolores.</p>
+        <section id="education">
+            <h2>Education</h2>
+            <ul class="education-list">
+                <li>
+                    <div class="education-item">
+                        <h3>Ramaiah Institute of Technology, Bengaluru</h3>
+                        <span class="date">(Dec 2022 - Present)</span>
                     </div>
-                    <div class="testimonial-slide swiper-slide">
-                        <img src="images/testimonial2.jpg" alt="">
-                        <h3>Flora Ocean</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem dignissimos aliquid
-                            iure delectus corrupti impedit, beatae aperiam ad iusto nostrum possimus cum pariatur harum
-                            assumenda suscipit a, qui, tempora maxime nulla facere quo ipsum tempore. Atque libero
-                            provident ad aut officia pariatur voluptate quaerat delectus nesciunt, sequi eligendi
-                            aperiam fugit unde nihil, iste similique illum. Dignissimos enim officia consequuntur
-                            dolores.</p>
+                    <p>Bachelor of Engineering, Information Science</p>
+                    <p>Cumulative GPA: 9.08</p>
+                </li>
+                <li>
+                    <div class="education-item">
+                        <h3>Sri Adi Chunchanagiri Independent PU College, Shimoga</h3>
+                        <span class="date">(Nov 2020 - April 2022)</span>
                     </div>
-                    <div class="testimonial-slide swiper-slide">
-                        <img src="images/testimonial3.jpg" alt="">
-                        <h3>Julian Grayson</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem dignissimos aliquid
-                            iure delectus corrupti impedit, beatae aperiam ad iusto nostrum possimus cum pariatur harum
-                            assumenda suscipit a, qui, tempora maxime nulla facere quo ipsum tempore. Atque libero
-                            provident ad aut officia pariatur voluptate quaerat delectus nesciunt, sequi eligendi
-                            aperiam fugit unde nihil, iste similique illum. Dignissimos enim officia consequuntur
-                            dolores.</p>
+                    <p>PCMB</p>
+                    <p>Percentage: 95.6%</p>
+                    
+                </li>
+                <li>
+                    <div class="education-item" style="display: flex; justify-content: space-between;">
+                        <h3>Hongirana School of Excellence,Sagara</h3>
+                        <span class="date">(April 2019 - March 2020)</span>
                     </div>
+                    <p>10th Grade (CBSE)</p>
+                    <p>Percentage: 92.2%</p>
+                </li>                
+            </ul>
+        </section>
+        
+        
+             
+
+        <section id="hobby">
+            <h2>Hobby</h2>
+            <p>When not immersed in code, I enjoy music production, cycling, and playing cricket.</p>
+            <p>Check out my music production videos on my <a href="https://www.youtube.com/@flyerss2809" target="_blank" class="youtube-link">YouTube channel</a>.</p>
+        </section>
+        
+
+        <section id="achievements">
+            <h2>Achievements</h2>
+            <ul>
+                <li>Recognized as one of the top 15 teams nationwide in the Unisys Innovation Programme (UIP).</li>
+                <li>Achieved a position among the top 70 teams across India in the Recursive Hackathon.</li>
+                <!-- <li>Solved 41 problems in Data Structures and Algorithms.</li> -->
+            </ul>
+        </section>
+
+        <!-- <section id="certificates">
+            <h2>Certificates</h2>
+            <div class="certificates-grid">
+                <div class="certificate-card">
+                    <img src="images/certificates/ Python.png" alt="Certificate 1">
+                    <h3>Machine Learning Specialization</h3>
+                    <p>Issued by Stanford University & DeepLearning.AI</p>
                 </div>
-
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
+                <div class="certificate-card">
+                    <img src="images/certificate2.jpg" alt="Certificate 2">
+                    <h3>Web Development Bootcamp</h3>
+                    <p>Issued by Udemy</p>
+                </div>
+                <div class="certificate-card">
+                    <img src="images/certificate3.jpg" alt="Certificate 3">
+                    <h3>AI Ethics and Governance</h3>
+                    <p>Issued by MIT</p>
+                </div>
             </div>
-        </div>
-    </div> -->
+        </section>
+         -->
 
-        <!-- contact section design -->
-    <section class="contact" id="contact">
-        <h2 class="heading">Contact <span>Me!</span></h2>
-
-        <form id="contactForm">
-            <div class="input-box">
-                <input type="text" name="name" placeholder="Full Name" required>
-                <input type="email" name="email" placeholder="Email Address" required>
+        <section id="contact">
+            <h2>Contact</h2>
+            <form class="contact-form" id="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" maxlength="500"required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+        
+        <section id="social">
+            <h2>Find Me Online</h2>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/suhass434/" target="_blank" class="social-link">LinkedIn</a>
+                <a href="https://github.com/suhass434" target="_blank" class="social-link">GitHub</a>
+                <a href="https://www.instagram.com/suhass434/" target="_blank" class="social-link">Instagram</a>
+                <a href="https://leetcode.com/u/suhass145/" target="_blank" class="social-link">LeetCode</a>
+                <a href="https://www.kaggle.com/suhas1901" target="_blank" class="social-link">Kaggle</a>
             </div>
-            <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
-            <input type="submit" value="Send Message" class="btn">
-        </form>
-    </section>
+        </section>
+    </div>
 
-    <!-- footer design -->
-    <footer class="footer">
-        <div class="footer-text">
-            <p>Copyright &copy; 2024 | All Rights Reserved.</p>
-        </div>
-
-        <div class="footer-iconTop">
-            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
-        </div>
+    <footer>
+        <p>&copy; 2024 Suhas S | ML Enthusiast and Java Developer</p>
     </footer>
 
+    <div id="custom-alert" class="custom-alert">
+        <div class="alert-content">
+            <p id="alert-message"></p>
+            <button id="alert-close">Close</button>
+        </div>
+    </div>
+    
+<!-- Add this at the end of your body tag -->
+<div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div id="caption"></div>
+</div>
 
-    <!-- scroll reveal -->
-    <script src="https://unpkg.com/scrollreveal"></script>
-
-    <!-- swiper js -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
-    <!-- custom js -->
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
