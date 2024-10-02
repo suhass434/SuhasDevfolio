@@ -32,10 +32,11 @@ h3{
 
 body, p {
     font-family: 'Source Code Pro', monospace;
+    font-weight: 370;
 }
-p {
+/* p {
     font-weight: normal;
-}
+} */
 
 body {
     font-family: 'Courier New', monospace;
