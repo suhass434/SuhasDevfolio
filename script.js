@@ -24,7 +24,7 @@ function typeText(element, text, speed) {
 
 typeText(document.getElementById('name'), 'Suhas S', 100);
 setTimeout(() => {
-    typeText(document.getElementById('title'), 'ML Enthusiast and Java Developer', 50);
+    typeText(document.getElementById('title'), 'ML Enthusiast with Java DSA Expertise', 50);
 }, 1000);
 
 // Smooth scrolling for navigation
