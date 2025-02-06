@@ -12,7 +12,7 @@ const portfolioData = {
         {
             title: "AI Intern",
             company: "Infosys Springboard",
-            period: "Nov 2024 - Present",
+            period: "Nov 2024 - Jan 2025",
             points: [
                 "Working on a Fraud Detection System alongside a team of 25 members, focused on identifying and mitigating fraudulent activities.",
                 "Gaining hands-on experience in machine learning and data processing to enhance the accuracy and effectiveness of fraud detection."
@@ -52,6 +52,13 @@ const portfolioData = {
         }
     ],
     projects: [
+        {
+            name: "VitalWatch",
+            image:"images/projects/VitalWatch.png",
+            description:"Built a cross-platform system monitoring tool with real-time performance tracking, automated alerts, and anomaly detection.",
+            techStack: "Python, PyQt5, Psutil, SQLite, Bash",
+            githubLink: "https://github.com/suhass434/VitalWatch"
+        },
         {
             name: "Sentify",
             image: "images/projects/sentify.jpeg",
