@@ -63,17 +63,22 @@ function initializeSections() {
     // Projects section
     const projectsGrid = document.getElementById('projects-grid');
     portfolioData.projects.forEach(project => {
-        const div = document.createElement('div');
-        div.className = 'project-card';
-        div.innerHTML = `
-            <img src="${project.image}" alt="${project.name} Project" onclick="openModal(this.src)">
+        const projectCard = document.createElement('div');
+        projectCard.className = 'project-card';
+        
+        projectCard.innerHTML = `
+            <img src="${project.image}" alt="${project.name}" onclick="openModal('${project.image}', '${project.name}')">
             <h3>${project.name}</h3>
             <p>${project.description}</p>
-            <p class="tech-used"><strong>Tech:</strong> ${project.techStack}</p>
-            <a href="${project.githubLink}" target="_blank">GitHub</a>
+            <p class="tech-stack">Tech Stack: ${project.techStack}</p>
+            <div class="project-links">
+                <a href="${project.githubLink}" target="_blank">GitHub</a>
+                ${project.website ? `<a href="${project.website}" target="_blank">Website</a>` : ''}
+            </div>
         `;
-        projectsGrid.appendChild(div);
+        projectsGrid.appendChild(projectCard);
     });
+    
 
     // Skills section
     const skillsContainer = document.getElementById('skills-container');

@@ -47,7 +47,7 @@ const portfolioData = {
             points: [
                 "Championed open-source software, with a primary focus on Linux distributions, educating over 300 individuals within the college community.",
                 "Guided more than 30 individuals in setting up and configuring Linux operating systems on their personal computers.",
-                "Collaborated with team members to organize and execute events highlighting the benefits and usage of open-source technologies. Successfully hosted 5+ events with an average attendance of 100 participants."
+                "Organized and hosted 5+ open-source events, engaging 100+ participants on average."
             ]
         }
     ],
@@ -55,9 +55,10 @@ const portfolioData = {
         {
             name: "VitalWatch",
             image:"images/projects/VitalWatch.png",
-            description:"Built a cross-platform system monitoring tool with real-time performance tracking, automated alerts, and anomaly detection.",
+            description:"Built a cross-platform system monitoring tool with real-time performance tracking and anomaly detection.",
             techStack: "Python, PyQt5, Psutil, SQLite, Bash",
-            githubLink: "https://github.com/suhass434/VitalWatch"
+            githubLink: "https://github.com/suhass434/VitalWatch",
+            website: "https://vitalwatch.vercel.app"
         },
         {
             name: "Sentify",
