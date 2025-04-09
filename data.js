@@ -148,9 +148,11 @@ const portfolioData = {
         }
     ],
     achievements: [
-        "Recognized as one of the top 15 teams nationwide in the Unisys Innovation Programme (UIP).",
-        "Achieved a position among the top 70 teams across India in the Recursive Hackathon."
-    ],
+        "Secured 1st Runner-Up in Hackwell 5.0, a 48-hour online hackathon, and won ₹50,000 for the project CrawlShastra: Document Crawler and Analyzer.",
+        "Winners of Enigma 2k24 Hackathon, developed a stock market prediction solution using machine learning and won ₹20,000.",
+        "Top 15 nationwide in Unisys Innovation Programme (UIP) with the project DiaCure – Diabetic prediction from retinal images using optimized neural networks.",
+        "Achieved a position among the top 70 teams across India in the Recursive Hackathon with the project SafeSpoon: Food safety checker using personal health inputs."
+    ],       
     hobby: {
         description: "When not immersed in code, I enjoy music production, cycling, and playing cricket.",
         youtubeLink: "https://www.youtube.com/@flyerss2809"
