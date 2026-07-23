@@ -1,13 +1,27 @@
-  # Portfolio README
-  
-This is my personal portfolio website showcasing skills, projects, and professional experience. It includes sections such as:
+# Suhas Devfolio
 
-Live Preview
-You can view the live version of my portfolio [here](https://suhas-devfolio.vercel.app/).
+Personal portfolio for Suhas S, built as a simple terminal-inspired static site.
 
-- **Home:** A brief introduction, including links to social profiles and a downloadable resume.
-- **About:** An overview of my background in Information Science Engineering and my interests in web development, machine learning, and more.
-- **Experience:** Details on past professional roles including Backend Developer at NFThings and involvement with the Creative Team at Mukti.
-- **Skills:** A comprehensive list of technical skills including programming languages, web development, machine learning tools, and more.
-- **Projects:** Highlights of significant projects like SafeSpoon, BreedSnap, and NeuroFlap, with links to repositories or live demos.
-- **Contact:** A form to reach out for inquiries or collaborations.
+Live preview: https://suhas-devfolio.vercel.app/
+
+## Sections
+
+- Profile
+- Internships
+- Projects
+- Hackathon wins
+- Skills
+- Education and leadership
+- Contact
+
+## Local Preview
+
+```bash
+python3 -m http.server 4173 --bind 127.0.0.1
+```
+
+Open:
+
+```text
+http://127.0.0.1:4173/
+```

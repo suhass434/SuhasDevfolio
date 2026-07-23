@@ -3,108 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <meta name="description" content="Suhas S portfolio - software engineer working across full-stack products, AI/ML, and backend systems.">
+    <title>Suhas S | Software Engineer</title>
     <link rel="stylesheet" href="styles.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    
 </head>
 <body>
-    <header>
-        <div class="profile-image-container">
-            <img src="" alt="" class="profile-image" id="profile-image">
-        </div>        
-        <h1 class="typing-effect" id="name"></h1>
-        <p id="title"></p>
-        <a href="" target="_blank" class="resume-button" id="resume-link"><p>View Resume</p></a>
-        <a href="#contact" class="contact-button"><p>Contact Me</p></a>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <a class="brand-mark" href="#home" aria-label="Suhas S home">SS</a>
+        <nav class="site-nav" aria-label="Primary navigation">
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#hackathons">Hackathons</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            <a href="#leadership">Leadership</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <a class="nav-action" id="nav-resume" href="https://drive.google.com/drive/folders/1QjZVcpZJUmbJgMLxYwYiMmSWtHjXTdDH?usp=drive_link" target="_blank" rel="noopener noreferrer">Resume</a>
     </header>
 
-    <nav>
-        <ul class="nav-menu">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#hobby">Hobby</a></li>
-            <li><a href="#achievements">Achievements</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <section id="about">
-            <h2>About Me</h2>
-            <p id="about-content"></p>
+    <main id="main">
+        <section class="hero" id="home" aria-labelledby="hero-title">
+            <div class="terminal-panel">
+                <div class="terminal-topbar" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <p>suhas@devfolio:~</p>
+                </div>
+                <div class="terminal-body hero-terminal">
+                    <div class="hero-copy-block">
+                        <p class="command">$ whoami</p>
+                        <h1 id="hero-title"></h1>
+                        <p class="role-line" id="hero-role"></p>
+                        <p class="hero-copy" id="hero-intro"></p>
+                        <div class="terminal-meta">
+                            <span id="hero-location"></span>
+                        </div>
+                    </div>
+                    <figure class="hero-photo-frame">
+                        <img id="hero-photo" src="" alt="">
+                    </figure>
+                </div>
+            </div>
         </section>
 
-        <section id="experience">
-            <h2>Experience</h2>
-            <ul id="experience-list"></ul>
+        <section class="section" id="experience">
+            <div class="section-title">
+                <p class="command">$ ls experience/</p>
+                <h2>Experience</h2>
+            </div>
+            <div class="timeline" id="experience-list"></div>
         </section>
 
-        <section id="responsibilities">
-            <h2>Responsibilities</h2>
-            <ul id="responsibilities-list"></ul>
-        </section>        
-        
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="projects-grid" id="projects-grid"></div>
+        <section class="section" id="projects">
+            <div class="section-title">
+                <p class="command">$ ls projects/</p>
+                <h2>Projects</h2>
+            </div>
+            <div class="project-grid" id="project-grid"></div>
+            <div class="archive-panel">
+                <button class="archive-toggle" id="archive-toggle" type="button" aria-expanded="false" aria-controls="archive-grid">
+                    show archived builds
+                </button>
+                <div class="archive-grid" id="archive-grid" hidden></div>
+            </div>
         </section>
 
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="skills-container" id="skills-container"></div>
+        <section class="section" id="hackathons">
+            <div class="section-title">
+                <p class="command">$ cat hackathon-wins.md</p>
+                <h2>Hackathon Wins</h2>
+            </div>
+            <div class="achievement-grid" id="achievement-grid"></div>
         </section>
 
-        <section id="education">
-            <h2>Education</h2>
-            <ul class="education-list" id="education-list"></ul>
-        </section>
-        
-        <section id="achievements">
-            <h2>Achievements</h2>
-            <ul id="achievements-list"></ul>
-        </section>        
-
-        <section id="hobby">
-            <h2>Hobby</h2>
-            <p id="hobby-description"></p>
-            <p>Check out my music production videos on my <a href="" target="_blank" class="youtube-link" id="youtube-link">YouTube channel</a>.</p>
+        <section class="section" id="skills">
+            <div class="section-title">
+                <p class="command">$ printenv SKILLS</p>
+                <h2>Skills</h2>
+            </div>
+            <div class="skill-board" id="skill-board"></div>
         </section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <form class="contact-form" id="contact-form">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" rows="5" maxlength="500" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+        <section class="section" id="education">
+            <div class="section-title">
+                <p class="command">$ cat education.txt</p>
+                <h2>Education</h2>
+            </div>
+            <div class="education-list" id="education-list"></div>
         </section>
-        
-        <section id="social">
-            <h2>Find Me Online</h2>
-            <div class="social-links" id="social-links"></div>
-        </section>
-    </div>
 
-    <footer>
-        <p>&copy; 2024 Suhas S | ML Enthusiast with Java DSA Expertise</p>
+        <section class="section" id="leadership">
+            <div class="section-title">
+                <p class="command">$ cat leadership.txt</p>
+                <h2>Leadership</h2>
+            </div>
+            <div class="leadership-list" id="leadership-list"></div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="section-title">
+                <p class="command">$ ./contact</p>
+                <h2>Contact</h2>
+            </div>
+            <div class="contact-card">
+                <p id="contact-pitch"></p>
+                <div class="social-links" id="social-links"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p id="footer-copy"></p>
     </footer>
 
-    <div id="custom-alert" class="custom-alert">
-        <div class="alert-content">
-            <p id="alert-message"></p>
-            <button id="alert-close">Close</button>
-        </div>
-    </div>
-    
-    <div id="imageModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImage">
-        <div id="caption"></div>
-    </div>
+    <dialog class="image-dialog" id="image-dialog" aria-label="Project preview">
+        <button class="dialog-close" type="button" id="dialog-close" aria-label="Close preview">Close</button>
+        <img id="dialog-image" alt="">
+        <p id="dialog-caption"></p>
+    </dialog>
 
     <script type="module" src="script.js"></script>
 </body>

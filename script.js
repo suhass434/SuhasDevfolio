@@ -1,209 +1,259 @@
-import portfolioData from './data.js';
+import portfolioData from "./data.js";
 
-// Initialize basic information
-function initializeBasicInfo() {
-    document.getElementById('profile-image').src = portfolioData.basic.profileImage;
-    document.getElementById('profile-image').alt = portfolioData.basic.name;
-    document.getElementById('name').textContent = portfolioData.basic.name;
-    document.getElementById('title').textContent = portfolioData.basic.title;
-    document.getElementById('resume-link').href = portfolioData.basic.resumeLink;
-}
+const qs = (selector, parent = document) => parent.querySelector(selector);
+const qsa = (selector, parent = document) => [...parent.querySelectorAll(selector)];
 
-// Typing effect for name and title
-function typeText(element, text, speed) {
-    let i = 0;
-    element.innerHTML = '';
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
+function el(tag, className, text) {
+    const node = document.createElement(tag);
+    if (className) {
+        node.className = className;
     }
-    type();
+    if (text !== undefined) {
+        node.textContent = text;
+    }
+    return node;
 }
 
-// Initialize sections
-function initializeSections() {
-    // About section
-    document.getElementById('about-content').textContent = portfolioData.about.description;
+function link(label, href, className = "text-link") {
+    const anchor = el("a", className, label);
+    anchor.href = href;
+    const shouldOpenInNewTab = !href.startsWith("#") && !href.startsWith("mailto:");
+    anchor.target = shouldOpenInNewTab ? "_blank" : "_self";
+    if (shouldOpenInNewTab) {
+        anchor.rel = "noopener noreferrer";
+    }
+    return anchor;
+}
 
-    // Experience section
-    const experienceList = document.getElementById('experience-list');
-    portfolioData.experience.forEach(exp => {
-        const li = document.createElement('li');
-        li.innerHTML = `
-        <div style="display: flex; justify-content: space-between; align-items: baseline;">
-            <h3>${exp.title}, ${exp.company}</h3>
-            <span class="period">${exp.period}</span>
-        </div>
-        <ul>
-            ${exp.points.map(point => `<li><p>${point}</p></li>`).join('')}
-        </ul>
-    `;
-        experienceList.appendChild(li);
-    });
+function renderHero() {
+    const { basic } = portfolioData;
+    document.title = `${basic.name} | ${basic.role}`;
 
-    // Responsibilities section
-    const responsibilitiesList = document.getElementById('responsibilities-list');
-    portfolioData.responsibilities.forEach(resp => {
-        const li = document.createElement('li');
-        li.innerHTML = `
-        <div style="display: flex; justify-content: space-between; align-items: baseline;">
-            <h3>${resp.title}, ${resp.organization}</h3>
-            <span class="period">${resp.period}</span>
-        </div>
-        <ul>
-            ${resp.points.map(point => `<li><p>${point}</p></li>`).join('')}
-        </ul>
-    `;
-        responsibilitiesList.appendChild(li);
-    });
+    qs("#hero-title").textContent = basic.name;
+    qs("#hero-role").textContent = basic.role;
+    qs("#hero-intro").textContent = basic.intro;
+    qs("#hero-location").textContent = basic.location;
+    qs("#hero-photo").src = basic.profileImage;
+    qs("#hero-photo").alt = `${basic.name} portrait`;
+    qs("#nav-resume").href = basic.resumeLink;
+}
 
-    // Projects section
-    const projectsGrid = document.getElementById('projects-grid');
-    portfolioData.projects.forEach(project => {
-        const projectCard = document.createElement('div');
-        projectCard.className = 'project-card';
-        
-        projectCard.innerHTML = `
-            <img src="${project.image}" alt="${project.name}" onclick="openModal('${project.image}', '${project.name}')">
-            <h3>${project.name}</h3>
-            <p>${project.description}</p>
-            <p class="tech-stack">Tech Stack: ${project.techStack}</p>
-            <div class="project-links">
-                <a href="${project.githubLink}" target="_blank">GitHub</a>
-                ${project.website ? `<a href="${project.website}" target="_blank">Website</a>` : ''}
-            </div>
-        `;
-        projectsGrid.appendChild(projectCard);
-    });
-    
+function renderExperience() {
+    const list = qs("#experience-list");
 
-    // Skills section
-    const skillsContainer = document.getElementById('skills-container');
-    Object.entries(portfolioData.skills).forEach(([category, skills]) => {
-        const div = document.createElement('div');
-        div.className = 'skills-category';
-        div.innerHTML = `
-            <h3>${category}</h3>
-            <div class="skills-list">
-                ${skills.map(skill => `<span class="skill">${skill}</span>`).join('')}
-            </div>
-        `;
-        skillsContainer.appendChild(div);
-    });
+    portfolioData.experience.forEach((item) => {
+        const card = el("article", "timeline-card");
+        const header = el("div", "card-header");
+        const titleWrap = el("div");
 
-    // Education section
-    const educationList = document.getElementById('education-list');
-    portfolioData.education.forEach(edu => {
-        const li = document.createElement('li');
-        li.innerHTML = `
-        <div style="display: flex; justify-content: space-between; align-items: baseline;">
-            <h3>${edu.institution}</h3>
-            <span class="period">${edu.period}</span>
-        </div>
-        <ul>
-            ${edu.details.map(detail => `<li><p>${detail}</p></li>`).join('')}
-        </ul>
-    `;
-        educationList.appendChild(li);
-    });
+        titleWrap.append(el("p", "meta", item.period), el("h3", "", `${item.company} - ${item.title}`));
+        header.append(titleWrap);
 
-    // Achievements section
-    const achievementsList = document.getElementById('achievements-list');
-    portfolioData.achievements.forEach(achievement => {
-        const li = document.createElement('li');
-        li.textContent = achievement;
-        achievementsList.appendChild(li);
-    });
-
-    // Hobby section
-    document.getElementById('hobby-description').textContent = portfolioData.hobby.description;
-    document.getElementById('youtube-link').href = portfolioData.hobby.youtubeLink;
-
-    // Social links section - Updated with proper icons and labels
-    const socialLinks = document.getElementById('social-links');
-    const socialIcons = {
-        linkedin: '<i class="fab fa-linkedin"></i> LinkedIn',
-        github: '<i class="fab fa-github"></i> GitHub',
-        instagram: '<i class="fab fa-instagram"></i> Instagram',
-        leetcode: '<i class="fas fa-code"></i> LeetCode',
-        kaggle: '<i class="fas fa-database"></i> Kaggle'
-    };
-
-    Object.entries(portfolioData.social).forEach(([platform, url]) => {
-        const a = document.createElement('a');
-        a.href = url;
-        a.target = '_blank';
-        a.className = `social-link ${platform}`;
-        a.innerHTML = socialIcons[platform] || platform;
-        socialLinks.appendChild(a);
+        card.append(header, el("p", "summary", item.summary), pointList(item.points), tagList(item.tags));
+        list.append(card);
     });
 }
 
-// Modal functionality
-window.openModal = function(imgSrc) {
-    const modal = document.getElementById('imageModal');
-    const modalImg = document.getElementById('modalImage');
-    modal.style.display = "block";
-    modalImg.src = imgSrc;
+function renderProjects() {
+    const grid = qs("#project-grid");
+
+    portfolioData.projects.forEach((project) => {
+        grid.append(projectCard(project));
+    });
+
+    renderArchivedProjects();
 }
 
-window.closeModal = function() {
-    document.getElementById('imageModal').style.display = "none";
+function projectCard(project) {
+    const card = el("article", "project-card");
+
+    if (project.image) {
+        const preview = el("button", "project-preview");
+        preview.type = "button";
+        preview.setAttribute("aria-label", `Open ${project.name} screenshot`);
+
+        const image = document.createElement("img");
+        image.src = project.image;
+        image.alt = `${project.name} screenshot`;
+        image.loading = "lazy";
+
+        preview.append(image);
+        preview.addEventListener("click", () => openImageDialog(project.image, `${project.name} screenshot`));
+        card.append(preview);
+    }
+
+    const actions = el("div", "inline-links");
+    if (project.link) {
+        actions.append(link("Live", project.link));
+    }
+    if (project.github) {
+        actions.append(link("Code", project.github));
+    }
+
+    const header = el("div", "project-card-header");
+    const titleWrap = el("div");
+    titleWrap.append(el("p", "meta", project.type), el("h3", "", project.name));
+    header.append(titleWrap);
+    if (actions.children.length) {
+        header.append(actions);
+    }
+
+    card.append(
+        header,
+        el("p", "summary", project.summary),
+        pointList(project.points),
+        tagList(project.stack)
+    );
+
+    return card;
 }
 
-// Contact form handling
-function initializeContactForm() {
-    const contactForm = document.getElementById('contact-form');
-    const alertBox = document.getElementById('custom-alert');
-    const alertMessage = document.getElementById('alert-message');
-    const alertClose = document.getElementById('alert-close');
+function renderArchivedProjects() {
+    const archiveGrid = qs("#archive-grid");
+    const archiveToggle = qs("#archive-toggle");
 
-    emailjs.init(portfolioData.contact.emailjs.publicKey);
+    portfolioData.archivedProjects.forEach((project) => {
+        archiveGrid.append(projectCard(project));
+    });
 
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const formData = {
-            name: this.name.value,
-            email: this.email.value,
-            message: this.message.value,
-            to_email: portfolioData.contact.emailjs.toEmail
-        };
+    archiveToggle.addEventListener("click", () => {
+        const isExpanded = archiveToggle.getAttribute("aria-expanded") === "true";
+        archiveToggle.setAttribute("aria-expanded", String(!isExpanded));
+        archiveGrid.hidden = isExpanded;
+        archiveToggle.textContent = isExpanded ? "show archived builds" : "hide archived builds";
+    });
+}
 
-        emailjs.send(
-            portfolioData.contact.emailjs.serviceId,
-            portfolioData.contact.emailjs.templateId,
-            formData
-        ).then(
-            function(response) {
-                showAlert('Message sent successfully!');
-                contactForm.reset();
-            },
-            function(error) {
-                showAlert('Failed to send message. Please try again.');
-            }
+function renderAchievements() {
+    const grid = qs("#achievement-grid");
+
+    portfolioData.achievements.forEach((achievement) => {
+        const card = el("article", "achievement-card");
+
+        if (achievement.image) {
+            const preview = el("button", "achievement-preview");
+            preview.type = "button";
+            preview.setAttribute("aria-label", `Open ${achievement.title} photo`);
+
+            const image = document.createElement("img");
+            image.src = achievement.image;
+            image.alt = `${achievement.title} prize photo`;
+            image.loading = "lazy";
+
+            preview.append(image);
+            preview.addEventListener("click", () => openImageDialog(achievement.image, `${achievement.title} prize photo`));
+            card.append(preview);
+        }
+
+        card.append(el("h3", "", achievement.title), el("p", "summary", achievement.detail));
+        if (achievement.link) {
+            card.append(link("Certificate", achievement.link));
+        }
+        grid.append(card);
+    });
+}
+
+function renderSkills() {
+    const board = qs("#skill-board");
+    portfolioData.skills.forEach((skillGroup) => {
+        const card = el("article", "skill-card");
+        card.append(el("h3", "", skillGroup.group), tagList(skillGroup.items));
+        board.append(card);
+    });
+}
+
+function renderEducation() {
+    const educationList = qs("#education-list");
+    portfolioData.education.forEach((education) => {
+        const card = el("article", "education-box");
+        card.append(
+            el("h3", "", education.institution),
+            el("p", "summary", `${education.degree} / ${education.period}`),
+            el("p", "meta", education.result)
         );
-    });
-
-    alertClose.addEventListener('click', function() {
-        alertBox.style.display = 'none';
+        educationList.append(card);
     });
 }
 
-function showAlert(message) {
-    const alertBox = document.getElementById('custom-alert');
-    const alertMessage = document.getElementById('alert-message');
-    alertMessage.textContent = message;
-    alertBox.style.display = 'block';
+function renderLeadership() {
+    const leadershipList = qs("#leadership-list");
+    portfolioData.leadership.forEach((entry) => {
+        const card = el("article", "leadership-card");
+        card.append(el("h3", "", `${entry.organization} - ${entry.role}`), el("p", "summary", entry.summary));
+        leadershipList.append(card);
+    });
 }
 
-// Initialize everything when the DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    initializeBasicInfo();
-    typeText(document.getElementById('name'), portfolioData.basic.name, 100);
-    initializeSections();
-    initializeContactForm();
-});
+function renderContact() {
+    qs("#contact-pitch").textContent = portfolioData.contact.pitch;
+    qs("#footer-copy").textContent = `${new Date().getFullYear()} ${portfolioData.basic.name}.`;
+
+    const socials = qs("#social-links");
+    socials.append(link(portfolioData.basic.email, `mailto:${portfolioData.basic.email}`, "social-link primary"));
+    portfolioData.social.forEach((social) => socials.append(link(social.label, social.href, "social-link")));
+}
+
+function initializeDialog() {
+    const dialog = qs("#image-dialog");
+    qs("#dialog-close").addEventListener("click", () => dialog.close());
+    dialog.addEventListener("click", (event) => {
+        if (event.target === dialog) {
+            dialog.close();
+        }
+    });
+}
+
+function openImageDialog(src, caption) {
+    const dialog = qs("#image-dialog");
+    qs("#dialog-image").src = src;
+    qs("#dialog-image").alt = caption;
+    qs("#dialog-caption").textContent = caption;
+
+    if (typeof dialog.showModal === "function") {
+        dialog.showModal();
+    } else {
+        dialog.setAttribute("open", "");
+    }
+}
+
+function pointList(points) {
+    const list = el("ul", "point-list");
+    points.forEach((point) => list.append(el("li", "", point)));
+    return list;
+}
+
+function tagList(tags) {
+    const wrap = el("div", "tag-list");
+    tags.forEach((tag) => wrap.append(el("span", "", tag)));
+    return wrap;
+}
+
+function initializeNavigationState() {
+    const links = qsa(".site-nav a");
+    const sections = links.map((item) => qs(item.getAttribute("href"))).filter(Boolean);
+
+    const observer = new IntersectionObserver((entries) => {
+        const active = entries.find((entry) => entry.isIntersecting);
+        if (!active) {
+            return;
+        }
+        links.forEach((item) => item.classList.toggle("active", item.getAttribute("href") === `#${active.target.id}`));
+    }, { rootMargin: "-20% 0px -65% 0px", threshold: 0.1 });
+
+    sections.forEach((section) => observer.observe(section));
+}
+
+function initialize() {
+    renderHero();
+    renderExperience();
+    renderProjects();
+    renderAchievements();
+    renderSkills();
+    renderEducation();
+    renderLeadership();
+    renderContact();
+    initializeDialog();
+    initializeNavigationState();
+}
+
+document.addEventListener("DOMContentLoaded", initialize);
