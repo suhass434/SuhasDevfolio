@@ -658,9 +658,94 @@ h3 {
         width: calc(100% - 20px);
     }
 
+    .site-header {
+        grid-template-columns: auto 1fr;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .brand-mark {
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav-action {
+        justify-self: end;
+    }
+
+    .site-nav {
+        grid-column: 1 / -1;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 4px;
+        padding-bottom: 0;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .site-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .site-nav a,
+    .nav-action {
+        min-height: 32px;
+        padding: 5px 7px;
+        font-size: 0.8rem;
+    }
+
+    .site-nav a {
+        flex: 0 0 auto;
+    }
+
     .hero {
-        margin-top: 62px;
-        margin-bottom: 54px;
+        margin-top: 34px;
+        margin-bottom: 56px;
+    }
+
+    .terminal-topbar {
+        min-height: 38px;
+        padding: 0 12px;
+    }
+
+    .terminal-topbar p {
+        font-size: 0.78rem;
+    }
+
+    .terminal-body {
+        padding: 22px;
+    }
+
+    h1 {
+        font-size: clamp(2.6rem, 14vw, 3.45rem);
+        line-height: 1;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    .role-line {
+        font-size: 1rem;
+        line-height: 1.45;
+    }
+
+    .hero-copy {
+        font-size: 0.96rem;
+    }
+
+    .hero-photo-frame {
+        width: min(230px, 100%);
+        justify-self: center;
+        padding: 8px;
+    }
+
+    .command {
+        font-size: 0.86rem;
     }
 
     .terminal-body,
@@ -676,8 +761,43 @@ h3 {
         display: grid;
     }
 
+    .terminal-meta span,
+    .social-link {
+        width: fit-content;
+        max-width: 100%;
+    }
+
     .section {
         margin-bottom: 64px;
+        scroll-margin-top: 172px;
+    }
+
+    .timeline-card,
+    .achievement-card,
+    .skill-card,
+    .education-box,
+    .leadership-card,
+    .contact-card,
+    .project-card {
+        padding: 16px;
+    }
+
+    .point-list {
+        padding-left: 18px;
+    }
+
+    .project-preview {
+        margin-bottom: 16px;
+    }
+
+    .tag-list,
+    .social-links {
+        gap: 7px;
+    }
+
+    .tag-list span,
+    .social-link {
+        font-size: 0.82rem;
     }
 }
 
